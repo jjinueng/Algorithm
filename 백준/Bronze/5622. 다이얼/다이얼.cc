@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+
+#define fastio cin.tie(0)->sync_with_stdio(0)
+#define ll long long
+#define endl '\n'
+using namespace std;
+
+
+int main() {
+    fastio;
+    string s;
+    int ans = 0;
+    cin >> s;
+    for (int i = 0; i < s.length(); ++i) {
+        if (s[i] < 'P') { ans += (s[i] - 56) / 3; }
+        else {
+            ans += (s[i] - 48) / 4;
+        }
+        if (s[i] == 'W') ans++;
+    }
+    cout << ans;
+    return 0;
+}

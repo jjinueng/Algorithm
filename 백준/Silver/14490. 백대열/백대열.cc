@@ -1,33 +1,24 @@
 #include <bits/stdc++.h>
-
-#define fastio cin.tie(0)->sync_with_stdio(0)
-#define ll long long
-#define endl '\n'
 using namespace std;
 
-void solve(int n, int m) {
-    int max, num = 1;
-    if (n < m) max = m;
-    else max = n;
-    for (int i = 1; i <= max; ++i) {
-        if (m % i == 0 && n % i == 0) {
-            num = i;
-        }
-    }
-    cout << n / num << ":" << m / num << endl;
+pair<int, int> split_number(string s) {
+    stringstream ss(s);
+    int a, b;
+    char _;
+    ss >> a >> _ >> b;
+    return make_pair(a, b);
+}
+
+void solve(int a, int b) {
+    int g = gcd(a, b);
+    cout << a / g << ":" << b / g;
 }
 
 int main() {
-    fastio;
-    int n, m;
-    string s;
-    cin >> s;
-    for (int i = 0; i < s.length(); ++i) {
-        if (s[i] == ':') {
-            n = stoi(s.substr(0, i));
-            m = stoi(s.substr(i + 1, s.length() - 1));
-        }
-    }
-    solve(n, m);
+    ios_base::sync_with_stdio(false), cin.tie(nullptr);
+    string input;
+    cin >> input;
+    auto [a, b] = split_number(input);
+    solve(a, b);
     return 0;
 }

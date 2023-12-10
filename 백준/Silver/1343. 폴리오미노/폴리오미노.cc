@@ -4,20 +4,6 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
-//    string s, item;
-//    vector<string> v;
-//    cin >> s;
-//    stringstream ss(s);
-//    while (getline(ss, item, '.')) {
-//        v.push_back(item);
-//    }
-//    for (int i = 0; i < v.size(); ++i) {
-//        if (v[i].length() % 2 == 1) {
-//            cout << "-1";
-//            break;
-//        }
-//
-//    }
     string s;
     int count = 0;
     bool is_error = 0;
